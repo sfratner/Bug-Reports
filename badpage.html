@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Calculator</title>
+<!-- Making table lines and centering text -->
+<style>
+      table,
+      table td {
+        border: 1px solid #cccccc;
+      }
+      td {
+        height: 50px;
+        width: 70px;
+        text-align: center;
+        vertical-align: center;
+      }
+</style>
+</head>
+<body>
+<table>
+<thread>
+<!-- Naming Form -->
+<form name="theForm">
+	<tr> <!-- Row 1 the header -->
+		<th colspan="3">Enter a number in each box and </br>
+			then select an operating function.</br></th>
+	</tr>
+</thread>
+<tbody>
+	<tr> <!-- Row 2 first number-->
+		<td colspan="2"></td>
+		<td><input type="text" id="line1" ><br></td>
+	</tr>
+	<tr><!-- Row 3 second number-->	
+		<td colspan="2"></td>
+		<td><input type="text" id="line2"><br></td>
+	</tr>
+	<tr><!-- Row 4 calculator operations-->
+		<td><input type="button" value="+" onClick="getSum()"></br>
+			<input type="button" value="-" onclick="getDifference()"/></br></td>
+		<td><input type="button" value="*" onClick="getMult()"></br>
+			<input type="button" value="/" onClick="getDiv()"></br></td>
+		<td></td>
+	</tr>
+	<tr><!-- Row 5 answer to the number problem-->
+		<td colspan="2">The answer is:</td>		
+		<td><p id = "answer"></p></td>
+</form>
+</tbody>
+</table>
+
+<script language="JavaScript">
+
+//addition
+function getSum(){
+var first = Number(document.getElementById("line1").value);
+var second = Number(document.getElementById("line2").value);
+var sum = first + second;
+document.getElementById("answer").innerHTML = sum;
+}
+//subtraction
+function getDifference(){
+var first = Number(document.getElementById("line1").value);
+var second = Number(document.getElementById("line2").value);
+var difference = first - second;
+document.getElementById("answer").innerHTML = difference;
+}
+//multiplication
+function getMult(){
+var first = Number(document.getElementById("line1").value);
+var second = Number(document.getElementById("line2").value);
+var multiple = first * second;
+document.getElementById("answer").innerHTML = multiple;
+}
+//division
+function getDiv(){
+var first = Number(document.getElementById("line1").value);
+var second = Number(document.getElementById("line2").value);
+var division = first / second;
+document.getElementById("answer").innerHTML = division;
+}
+</script>
+
+</body>
+</html>
